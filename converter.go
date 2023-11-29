@@ -28,6 +28,21 @@ func New() *Converter {
 	}
 }
 
+func (c *Converter) Convert(str string) string {
+	var res string
+	words := c.Splitter.Split(str)
+	for index := range words {
+		for _, format := range c.Formatters {
+			words[index] = format(index, words)
+		}
+		res += words[index]
+		if index != len(words)-1 {
+			res += string(c.Delimeter)
+		}
+	}
+	return res
+}
+
 func DefaultSplitter() *s.Splitter {
 	return s.New(
 		s.AddSkip(
