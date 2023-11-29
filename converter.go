@@ -22,6 +22,12 @@ type Converter struct {
 	Formatters []Format
 }
 
+func New() *Converter {
+	return &Converter{
+		Splitter: DefaultSplitter(),
+	}
+}
+
 func DefaultSplitter() *s.Splitter {
 	return s.New(
 		s.AddSkip(
