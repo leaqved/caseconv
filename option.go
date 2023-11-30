@@ -15,3 +15,9 @@ func WithDelimiter(delimeter rune) Option {
 		c.Delimiter = delimeter
 	}
 }
+
+func AddFormat(format Format) Option {
+	return func(c *Converter) {
+		c.Formatters = append(c.Formatters, format)
+	}
+}
