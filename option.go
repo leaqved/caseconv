@@ -9,3 +9,9 @@ func WithSplitter(splitter *splitter.Splitter) Option {
 		c.Splitter = splitter
 	}
 }
+
+func WithDelimiter(delimeter rune) Option {
+	return func(c *Converter) {
+		c.Delimiter = delimeter
+	}
+}
