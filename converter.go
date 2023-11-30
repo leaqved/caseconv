@@ -18,7 +18,7 @@ var DefaultSeparators = map[rune]struct{}{
 
 type Converter struct {
 	Splitter   *s.Splitter
-	Delimeter  rune
+	Delimiter  rune
 	Formatters []Format
 }
 
@@ -37,7 +37,7 @@ func (c *Converter) Convert(str string) string {
 		}
 		res += words[index]
 		if index != len(words)-1 {
-			res += string(c.Delimeter)
+			res += string(c.Delimiter)
 		}
 	}
 	return res
