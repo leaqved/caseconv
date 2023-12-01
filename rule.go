@@ -21,3 +21,9 @@ func WordIsLast() Rule {
 		return index == len(words)-1
 	}
 }
+
+func CharIsFirst() CharRule {
+	return func(index int, word string) bool {
+		return index == 0
+	}
+}
