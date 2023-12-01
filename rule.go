@@ -33,3 +33,9 @@ func CharInMiddle() CharRule {
 		return index > 0 && index < len(word)-1
 	}
 }
+
+func CharIsLast() CharRule {
+	return func(index int, word string) bool {
+		return index == len(word)-1
+	}
+}
