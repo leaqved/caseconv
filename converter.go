@@ -22,10 +22,12 @@ type Converter struct {
 	Formatters []Format
 }
 
-func New() *Converter {
-	return &Converter{
-		Splitter: DefaultSplitter(),
+func New(opts ...Option) *Converter {
+	c := &Converter{}
+	for _, opt := range opts {
+		opt(c)
 	}
+	return c
 }
 
 func (c *Converter) Convert(str string) string {
