@@ -27,3 +27,9 @@ func CharIsFirst() CharRule {
 		return index == 0
 	}
 }
+
+func CharInMiddle() CharRule {
+	return func(index int, word string) bool {
+		return index > 0 && index < len(word)-1
+	}
+}
