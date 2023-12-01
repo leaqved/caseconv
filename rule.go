@@ -15,3 +15,9 @@ func WordInMiddle() Rule {
 		return index > 0 && index < len(words)-1
 	}
 }
+
+func WordIsLast() Rule {
+	return func(index int, words []string) bool {
+		return index == len(words)-1
+	}
+}
