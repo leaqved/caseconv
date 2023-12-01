@@ -9,3 +9,9 @@ func WordIsFirst() Rule {
 		return index == 0
 	}
 }
+
+func WordInMiddle() Rule {
+	return func(index int, words []string) bool {
+		return index > 0 && index < len(words)-1
+	}
+}
